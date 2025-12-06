@@ -15,7 +15,7 @@
             <!-- Task 1.4 -->
             <!-- Task 5.2 -->
             <li>
-                <RouterLink to="/"><button class="sideNavButtons">Home</button></RouterLink>
+                <RouterLink to="/home"><button class="sideNavButtons">Home</button></RouterLink>
             </li>
             <li>
                 <RouterLink to="/about"><button class="sideNavButtons">About</button></RouterLink>
@@ -29,7 +29,6 @@
 </template>
 
 <style scoped>
-    /* Task 1.3 */
     #sideNavUL {
         display: inline-block;
         position: absolute;
@@ -50,5 +49,4 @@
         right: 35px;
         
     }
-    /* Task 1.3 ends */
 </style>

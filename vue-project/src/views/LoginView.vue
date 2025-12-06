@@ -32,7 +32,7 @@
     const message = ref(false);
 
     function loggedIn() {
-        router.push("/");
+        router.push("/home");
     }
 
     function login() {
@@ -84,7 +84,6 @@
 </template>
 
 <style scoped>
-    /* Task 4.1 */
     #container {
         display: flex;
         justify-self: center;
@@ -124,7 +123,4 @@
         color: black;
         text-align: center;
     }
-
-    /* Task 4.1 ends */
-
 </style>

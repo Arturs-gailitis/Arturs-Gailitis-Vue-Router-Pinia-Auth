@@ -48,7 +48,6 @@
 </template>
 
 <style scoped>
-  /* Task 1.2 */
   #container {
     max-height: 613px;
   }
@@ -62,9 +61,7 @@
     margin-left: -25px;
     margin-right: -25px;
   }
-  /* Task 1.2 ends */
 
-  /* Task 1.3 */
   #sideNav {
     display: inline-block;
     position: relative;
@@ -75,5 +72,4 @@
     width: 200px;
     z-index: 2;
   }
-  /* Task 1.3 ends */
 </style>

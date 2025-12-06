@@ -10,7 +10,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: "/",
+            path: "/home",
             name: "home",
             component: HomeView,
         },
@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
     const isAuthenticated = userStore.isAuthenticated;
     if((to.path == "/login" || to.path == "/register") && isAuthenticated) {
         console.log("4.4 Redirected authenticated user away from auth routes via guard");
-        return next({path: "/"});
+        return next({path: "/home"});
     }
 
     next();

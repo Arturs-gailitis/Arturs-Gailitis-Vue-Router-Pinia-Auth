@@ -15,6 +15,23 @@
         userStore.isAuthenticated ? "#FFECBDff" : "#979797ff"
     );
     // Task 5.1 ends
+
+    // Task 7.1
+    import { useRouter } from "vue-router";
+    const router = useRouter();
+    
+    // Task 7.2
+    // Task 7.3
+    function logout() {
+        userStore.logout();
+        console.log("7.1 Logout");
+        router.push("/login");
+        console.log("7.2 Redirected to login after logout");
+        console.log("7.3 Auth forms reset after logout");
+    }
+    // Task 7.3 ends
+    // Task 7.2 ends
+    // Task 7.1 ends
 </script>
 
 <template>
@@ -28,7 +45,9 @@
             <p>{{ name }}</p>
         </div>
         <div id="logout" v-if="userStore.isAuthenticated">
-            <button type="button" id="logoutButton">Log out</button>
+            <!-- Task 7.2 -->
+            <button type="button" id="logoutButton" @click="logout">Log out</button>
+            <!-- Task 7.2 ends -->
         </div>
         <!-- Task 5.1 ends -->
     </div>
@@ -36,7 +55,6 @@
 </template>
 
 <style scoped>
-    /* Task 1.2 */
     #navBar {
         display: flex;
         align-items: center;
@@ -53,9 +71,6 @@
         width: auto;
     }
 
-    /* Task 1.2 ends */
-
-    /* Task 5.1 */
     #logout {
         display: flex;
         position: relative;
@@ -78,6 +93,4 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-
-    /* Task 5.1 ends */
 </style>

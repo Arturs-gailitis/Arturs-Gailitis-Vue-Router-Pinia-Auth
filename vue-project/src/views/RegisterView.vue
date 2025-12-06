@@ -92,7 +92,6 @@
 </template>
 
 <style scoped>
-    /* Task 3.1 */
     #container {
         display: flex;
         justify-self: center;
@@ -151,5 +150,4 @@
         border: 1px solid black;
         
     }
-    /* Task 3.1 ends */
 </style>
