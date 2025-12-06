@@ -31,9 +31,11 @@
       <Header />
       <!-- Task 1.2 ends -->
       <!-- Task 1.3 -->
+      <!-- Task 5.2 -->
       <div id="sideNav" v-if="userStore.isAuthenticated">
         <SideNav/>
       </div>
+      <!-- Task 5.2 ends -->
     </div>
     <!-- Task 1.3 ends -->
     <!-- Task 1.4 -->
@@ -69,7 +71,7 @@
     top: 28px;
     margin-top: -27px;
     background-color: #C6FAF6ff;
-    height: 613px;
+    height: 690px;
     width: 200px;
   }
   /* Task 1.3 ends */

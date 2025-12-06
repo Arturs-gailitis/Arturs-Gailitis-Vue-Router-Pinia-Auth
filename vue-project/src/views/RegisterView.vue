@@ -40,7 +40,8 @@
             const newUser = {
                 name: name.value,
                 email: email.value,
-                password: password.value
+                password: password.value,
+                studentID: studentID.value
             };
             userStore.registerUser(newUser);
 
@@ -91,6 +92,7 @@
 </template>
 
 <style scoped>
+    /* Task 3.1 */
     #container {
         display: flex;
         justify-self: center;
@@ -149,4 +151,5 @@
         border: 1px solid black;
         
     }
+    /* Task 3.1 ends */
 </style>

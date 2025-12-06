@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import { useUserStore } from "../stores/userStore.js";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -11,7 +12,6 @@ const router = createRouter({
         {
             path: "/",
             name: "home",
-            meta: { req: true },
             component: HomeView,
         },
         {
@@ -31,6 +31,19 @@ const router = createRouter({
         }
     ]
 });
+
+// Task 4.4
+router.beforeEach((to, from, next) => {
+    const userStore = useUserStore();
+    const isAuthenticated = userStore.isAuthenticated;
+    if((to.path == "/login" || to.path == "/register") && isAuthenticated) {
+        console.log("4.4 Redirected authenticated user away from auth routes via guard");
+        return next({path: "/"});
+    }
+
+    next();
+})
+// Task 4.4 ends
 
 export default router;
 

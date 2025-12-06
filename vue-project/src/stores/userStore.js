@@ -33,16 +33,21 @@ export const useUserStore = defineStore("useUserStore", {
         },
 
         login(credentials) {
-            const user = this.users.find(u => u.email == credentials.email && u.password == btoa(credentials.password));
-            
+            const user = this.users.find(
+                u => u.email == credentials.email && u.password == btoa(credentials.password)
+            );
+
             if (user) {
-                this.isAuthenticated = true;
                 this.currentUser = user;
+                this.isAuthenticated = true;
+                return true;
             } else {
                 this.isAuthenticated = false;
                 this.currentUser = null;
+                return false;
             }
         },
+
 
         logout() {
             this.isAuthenticated = false;
