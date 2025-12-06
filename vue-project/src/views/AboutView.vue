@@ -24,7 +24,7 @@ console.log("6.3 AboutView uses store currentUser");
     <!-- Task 6.2 -->
     <div id="aboutMe">
         <h1 id="title">About Me</h1>
-        <ul id="list">
+        <ul id="list" v-if="userStore.currentUser">
             <li>
                 Full Name: <input type="text" v-model="userStore.currentUser.name" />
             </li>
