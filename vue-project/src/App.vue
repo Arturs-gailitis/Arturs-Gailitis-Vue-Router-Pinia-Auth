@@ -73,6 +73,7 @@
     background-color: #C6FAF6ff;
     height: 690px;
     width: 200px;
+    z-index: 2;
   }
   /* Task 1.3 ends */
 </style>

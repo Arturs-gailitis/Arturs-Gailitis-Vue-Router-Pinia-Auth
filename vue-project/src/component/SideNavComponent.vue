@@ -35,6 +35,7 @@
         position: absolute;
         margin-left: 20px;
         list-style: none;
+        z-index: 2;
     }
 
     .sideNavButtons {

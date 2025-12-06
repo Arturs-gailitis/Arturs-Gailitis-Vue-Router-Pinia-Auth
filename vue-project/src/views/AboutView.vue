@@ -6,10 +6,13 @@ import { useUserStore } from "../stores/userStore.js";
 const userStore = useUserStore();
 
 const info = {
-    name: userStore.currentUser?.name || "",
     email: userStore.currentUser?.email || "",
     ID: userStore.currentUser?.studentID || "",
 }
+
+// Task 6.4
+console.log("6.4 User full name updated in store")
+// Task 6.4 ends
 
 console.log("6.2 AboutView rendered with user data");
 console.log("6.3 AboutView uses store currentUser");
@@ -22,7 +25,9 @@ console.log("6.3 AboutView uses store currentUser");
     <div id="aboutMe">
         <h1 id="title">About Me</h1>
         <ul id="list">
-            <li>Full Name: {{ info.name }}</li>
+            <li>
+                Full Name: <input type="text" v-model="userStore.currentUser.name" />
+            </li>
             <li>Student ID: {{ info.ID }}</li>
             <li>Email: {{ info.email }}</li>
         </ul>
@@ -38,7 +43,7 @@ console.log("6.3 AboutView uses store currentUser");
         justify-self: center;
         height: 690px;
         width: 100%;
-        z-index: -1;
+        z-index: 1;
         margin-top: -28px;
         background-color: #DCCCFFff;
     }
@@ -59,4 +64,5 @@ console.log("6.3 AboutView uses store currentUser");
         top: 200px;
         list-style-type: none;
     }
+
 </style>

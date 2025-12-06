@@ -27,7 +27,7 @@
         <div id="name">
             <p>{{ name }}</p>
         </div>
-        <div id="logout">
+        <div id="logout" v-if="userStore.isAuthenticated">
             <button type="button" id="logoutButton">Log out</button>
         </div>
         <!-- Task 5.1 ends -->
