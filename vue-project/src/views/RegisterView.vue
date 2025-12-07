@@ -52,6 +52,7 @@
             // Task 3.4 ends
         } else {
             confirm.value = false;
+            alert("Register validation failed");
             console.log("3.3 Register validation failed");
         }
     }
@@ -85,6 +86,7 @@
             <!-- Task 3.2 ends -->
             <!-- Task 3.3 -->
             <button type="button" @click="register">Register</button>
+            <button type="button" @click="registered">Login</button>
             <!-- Task 3.3 ends -->
         </form>
     </div>

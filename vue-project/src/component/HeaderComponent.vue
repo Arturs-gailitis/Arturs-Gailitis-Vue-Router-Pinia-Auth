@@ -10,7 +10,6 @@
 
     const name = computed(() => userStore.currentUser?.name || "");
     
-    // Krāsa mainās atkarībā no autentifikācijas statusa
     const navBarColor = computed(() => 
         userStore.isAuthenticated ? "#FFECBDff" : "#979797ff"
     );

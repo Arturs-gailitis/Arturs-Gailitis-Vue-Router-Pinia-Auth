@@ -4,11 +4,34 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
-import { useUserStore } from "../stores/userStore.js";
+
+// Task 5.4
+function defaultRoute() {
+  const raw = localStorage.getItem("userStore");
+  let target = "/login";
+
+  if (raw !== null) {
+    const parsed = JSON.parse(raw);
+    if (parsed.currentUser !== null) {
+        target = "/home";
+    }
+  }
+
+  console.log("5.4 Default route resolved");
+  return target;
+}
+// Task 5.4 ends
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        // Task 5.4
+        {
+            path: "/",
+            name: "root",
+            redirect: () => defaultRoute(),
+        },
+        // Task 5.4 ends
         {
             path: "/home",
             name: "home",
@@ -31,19 +54,6 @@ const router = createRouter({
         }
     ]
 });
-
-// Task 4.4
-router.beforeEach((to, from, next) => {
-    const userStore = useUserStore();
-    const isAuthenticated = userStore.isAuthenticated;
-    if((to.path == "/login" || to.path == "/register") && isAuthenticated) {
-        console.log("4.4 Redirected authenticated user away from auth routes via guard");
-        return next({path: "/home"});
-    }
-
-    next();
-})
-// Task 4.4 ends
 
 export default router;
 

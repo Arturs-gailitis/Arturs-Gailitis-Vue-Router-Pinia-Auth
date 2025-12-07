@@ -35,6 +35,10 @@
         router.push("/home");
     }
 
+    function register() {
+        router.push("/register");
+    }
+
     function login() {
         const user = {
             email: email.value,
@@ -75,6 +79,7 @@
             </div>
             <!-- Task 4.3 -->
             <button type="button" @click="login" v-bind:disabled="emptyFields">Login</button>
+            <button type="button" @click="register">Register</button>
             <!-- Task 4.3 ends -->
             <!-- Task 4.2 ends -->
             <!-- Task 4.1 ends -->
